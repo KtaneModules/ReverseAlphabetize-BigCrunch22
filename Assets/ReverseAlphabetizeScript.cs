@@ -169,7 +169,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				}
 			}
 
-			if (Bomb.GetSolvedModuleNames().Count() < 5)
+			if ((Bomb.GetSolvedModuleNames().Count() < 5) != true)
 			{
 				if (i < 16)
 				{
@@ -185,7 +185,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				}
 			}
 
-			if (Bomb.GetModuleNames().Count() > 30)
+			if ((Bomb.GetModuleNames().Count() > 30) != true)
 			{
 				if (i < 16)
 				{
@@ -193,7 +193,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				}
 			}
 
-			if (Bomb.GetBatteryHolderCount() < 3)
+			if ((Bomb.GetBatteryHolderCount() < 3) != true)
 			{
 				if (i < 16)
 				{
