@@ -86,7 +86,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(0);
-					Debug.LogFormat("Table 1 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 1 is false.", moduleId);
 				}
 			}
 
@@ -95,7 +95,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(1);
-					Debug.LogFormat("Table 2 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 2 is false.", moduleId);
 				}
 			}
 
@@ -104,7 +104,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(2);
-					Debug.LogFormat("Table 3 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 3 is false.", moduleId);
 				}
 			}
 
@@ -113,7 +113,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(3);
-					Debug.LogFormat("Table 4 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 4 is false.", moduleId);
 				}
 			}
 
@@ -122,7 +122,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(4);
-					Debug.LogFormat("Table 5 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 5 is false.", moduleId);
 				}
 			}
 
@@ -131,7 +131,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(5);
-					Debug.LogFormat("Table 6 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 6 is false.", moduleId);
 				}
 			}
 
@@ -140,7 +140,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(6);
-					Debug.LogFormat("Table 7 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 7 is false.", moduleId);
 				}
 			}
 
@@ -149,7 +149,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(7);
-					Debug.LogFormat("Table 8 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 8 is false.", moduleId);
 				}
 			}
 
@@ -158,7 +158,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(8);
-					Debug.LogFormat("Table 9 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 9 is false.", moduleId);
 				}
 			}
 
@@ -167,7 +167,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(9);
-					Debug.LogFormat("Table 10 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 10 is false.", moduleId);
 				}
 			}
 
@@ -176,7 +176,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(10);
-					Debug.LogFormat("Table 11 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 11 is false.", moduleId);
 				}
 			}
 
@@ -185,7 +185,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(11);
-					Debug.LogFormat("Table 12 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 12 is false.", moduleId);
 				}
 			}
 
@@ -194,7 +194,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(12);
-					Debug.LogFormat("Table 13 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 13 is false.", moduleId);
 				}
 			}
 
@@ -203,7 +203,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(13);
-					Debug.LogFormat("Table 14 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 14 is false.", moduleId);
 				}
 			}
 
@@ -212,7 +212,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (i < 1)
 				{
 					NumericalValue.Add(14);
-					Debug.LogFormat("Table 15 is false.");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Table 15 is false.", moduleId);
 				}
 			}
 		}
@@ -222,7 +222,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 		if ((SilverLine.Count() % 2) == 0)
 		{
 			TheCopperValue = 15;
-			Debug.LogFormat("The string used is the English Alphabet backwards.");
+			Debug.LogFormat("[Reverse Alphabetize #{0}] The string used is the English Alphabet backwards.", moduleId);
 		}
 		
 		else if ((SilverLine.Count() % 2) == 1)
@@ -267,7 +267,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				TheCopperValue = 7;
 			}
 			
-			Debug.LogFormat("The string used is in Table " + (SilverLine[TheCopperValue] + 1).ToString());
+			Debug.LogFormat("[Reverse Alphabetize #{0}] The string used is in Table " + (SilverLine[TheCopperValue] + 1).ToString(), moduleId);
 		}
 	}
 	
@@ -303,19 +303,14 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 					}
 				}
 				
-				if (TheCopperValue != 15 && TheLetter.text == TheSequence[SilverLine[TheCopperValue]][TheFoil])
+				if ((TheCopperValue != 15 && TheLetter.text == TheSequence[SilverLine[TheCopperValue]][TheFoil]) || (TheCopperValue == 15 && TheLetter.text == TheSequence[TheCopperValue][TheFoil]))
 				{
-					Debug.LogFormat("Letter " + TheLetter.text.ToString() + " matches the letter in the current stage");
-				}
-				
-				else if (TheCopperValue == 15 && TheLetter.text == TheSequence[TheCopperValue][TheFoil])
-				{
-					Debug.LogFormat("Letter " + TheLetter.text.ToString() + " matches the letter in the current stage");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Letter " + TheLetter.text.ToString() + " matches the letter in the current stage.", moduleId);
 				}
 				
 				else
 				{
-					Debug.LogFormat("Letter " + TheLetter.text.ToString() + " does not match the letter in the current stage");
+					Debug.LogFormat("[Reverse Alphabetize #{0}] Letter " + TheLetter.text.ToString() + " does not match the letter in the current stage.", moduleId);
 				}
 			}
 		}
@@ -329,6 +324,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					if (TheSequence[SilverLine[TheCopperValue]][TheFoil] == TheLetter.text)
 					{
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Correct.", moduleId);
 						TheFoil = TheFoil - 1;
 						Randomizer();
 					}
@@ -336,7 +332,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 					else
 					{
 						StartCoroutine(Again());
-						Debug.LogFormat("Wrong input. Try again.");
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Incorrect.", moduleId);
 					}
 				}
 				
@@ -344,6 +340,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					if (TheSequence[TheCopperValue][TheFoil] == TheLetter.text)
 					{
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Correct.", moduleId);
 						TheFoil = TheFoil - 1;
 						Randomizer();
 					}
@@ -351,7 +348,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 					else
 					{
 						StartCoroutine(Again());
-						Debug.LogFormat("Wrong input. Try again.");
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Incorrect.", moduleId);
 					}
 				}
 			}
@@ -366,6 +363,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					if (TheSequence[SilverLine[TheCopperValue]][TheFoil] != TheLetter.text)
 					{
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Correct.", moduleId);
 						TheFoil = TheFoil - 1;
 						Randomizer();
 					}
@@ -373,7 +371,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 					else
 					{
 						StartCoroutine(Again());
-						Debug.LogFormat("Wrong input. Try again.");
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Incorrect.", moduleId);
 					}
 				}
 				
@@ -381,6 +379,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					if (TheSequence[TheCopperValue][TheFoil] != TheLetter.text)
 					{
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Correct.", moduleId);
 						TheFoil = TheFoil - 1;
 						Randomizer();
 					}
@@ -388,7 +387,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 					else
 					{
 						StartCoroutine(Again());
-						Debug.LogFormat("Wrong input. Try again.");
+						Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Incorrect.", moduleId);
 					}
 				}
 			}
@@ -419,6 +418,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield return new WaitForSeconds(0.5f);
 				Module.HandlePass();
 				Audio.PlaySoundAtTransform(SFX[0].name, transform);
+				Debug.LogFormat("[Reverse Alphabetize #{0}] Module is done.", moduleId);
 			}
 			
 			else if (Style == 0)
@@ -448,6 +448,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield return new WaitForSeconds(0.5f);
 				Module.HandlePass();
 				Audio.PlaySoundAtTransform(SFX[0].name, transform);
+				Debug.LogFormat("[Reverse Alphabetize #{0}] Module is done.", moduleId);
 			}
 		}
 		
