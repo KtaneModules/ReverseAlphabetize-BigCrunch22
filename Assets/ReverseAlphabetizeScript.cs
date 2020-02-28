@@ -189,7 +189,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				}
 			}
 
-			if ((Bomb.GetSerialNumber().Contains("02468") != true) != true)
+			if (Bomb.GetSerialNumber().Contains("0") || Bomb.GetSerialNumber().Contains("2") || Bomb.GetSerialNumber().Contains("4") || Bomb.GetSerialNumber().Contains("6") || Bomb.GetSerialNumber().Contains("8"))
 			{
 				if (i < 1)
 				{
