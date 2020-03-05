@@ -135,7 +135,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				}
 			}
 
-			if ((Bomb.GetSerialNumberNumbers().First() == '1' || Bomb.GetSerialNumberNumbers().First() == '3' || Bomb.GetSerialNumberNumbers().First() == '5' || Bomb.GetSerialNumberLetters().First() == '7' || Bomb.GetSerialNumberLetters().First() == '9') != true)
+			if (Bomb.GetSerialNumberNumbers().First() % 2 == 0) 
 			{
 				if (i < 1)
 				{
