@@ -223,7 +223,9 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 		if ((SilverLine.Count() % 2) == 0)
 		{
 			TheCopperValue = 15;
+			Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 			Debug.LogFormat("[Reverse Alphabetize #{0}] The string used is the English Alphabet backwards.", moduleId);
+			Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 		}
 		
 		else if ((SilverLine.Count() % 2) == 1)
@@ -268,7 +270,9 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				TheCopperValue = 7;
 			}
 			
+			Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 			Debug.LogFormat("[Reverse Alphabetize #{0}] The string used is in Table " + (SilverLine[TheCopperValue] + 1).ToString(), moduleId);
+			Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 		}
 	}
 	
@@ -326,7 +330,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (TheSequence[SilverLine[TheCopperValue]][TheFoil] == TheLetter.text)
 				{
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Correct.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 					TheFoil = TheFoil - 1;
 					Randomizer();
 				}
@@ -335,7 +339,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					StartCoroutine(Again());
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Incorrect.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 				}
 			}
 			
@@ -344,7 +348,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (TheSequence[TheCopperValue][TheFoil] == TheLetter.text)
 				{
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Correct.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 					TheFoil = TheFoil - 1;
 					Randomizer();
 				}
@@ -353,7 +357,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					StartCoroutine(Again());
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed left. Incorrect.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 				}
 			}
 		}
@@ -369,7 +373,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (TheSequence[SilverLine[TheCopperValue]][TheFoil] != TheLetter.text)
 				{
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Correct.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 					TheFoil = TheFoil - 1;
 					Randomizer();
 				}
@@ -378,7 +382,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					StartCoroutine(Again());
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Incorrect.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 				}
 			}
 			
@@ -387,7 +391,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				if (TheSequence[TheCopperValue][TheFoil] != TheLetter.text)
 				{
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Correct.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 					TheFoil = TheFoil - 1;
 					Randomizer();
 				}
@@ -396,7 +400,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				{
 					StartCoroutine(Again());
 					Debug.LogFormat("[Reverse Alphabetize #{0}] You pressed right. Incorrect.", moduleId);
-					Debug.LogFormat("[Reverse Alphabetize #{0}] ", moduleId);
+					Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
 				}
 			}
 		}
@@ -498,9 +502,36 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 		Supper = 0;
 	}
 	
+	IEnumerator UpdateVariables()
+	{
+		StrikingBool = true;
+		TheLetter.text = "U";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "P";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "D";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "A";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "T";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "E";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "D";
+		yield return new WaitForSeconds(0.1f);
+		TheLetter.text = "!";
+		yield return new WaitForSeconds(0.5f);
+		Reset();
+		Debug.LogFormat("[Reverse Alphabetize #{0}] The module is updated due to a command", moduleId);
+		Debug.LogFormat("[Reverse Alphabetize #{0}] -----------------------------", moduleId);
+		ActivateModule();
+		Randomizer();
+		StrikingBool = false;
+	}
+	
 	//twitch plays
     #pragma warning disable 414
-    private readonly string TwitchHelpMessage = @"Use the command !{0} left/right to press the corresponding side on the module.";
+    private readonly string TwitchHelpMessage = @"Use the command !{0} left/right to press the corresponding side on the module. You can use the command !{0} update to update the rule list being applied in the module (This however resets all inputs in the module)";
     #pragma warning restore 414
 	
 	bool StrikingBool = false;
@@ -527,6 +558,18 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield break;
 			}
 			LeftQuad.OnInteract();
+		}
+		
+		if (Regex.IsMatch(command, @"^\s*update\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+		{
+			yield return null;
+			if (StrikingBool == true)
+			{
+				yield return "sendtochaterror The module is not showing a letter. The command was not processed.";
+				yield break;
+			}
+			StartCoroutine(UpdateVariables());
+			yield return "sendtochaterror The rules are now updated.";
 		}
 	}
 }
