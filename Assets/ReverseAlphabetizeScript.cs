@@ -14,6 +14,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
     public KMBombModule Module;
 	
 	public AudioClip[] SFX;
+	public AudioSource Digger;
 
     public KMSelectable LeftQuad;
     public KMSelectable RightQuad;
@@ -569,7 +570,7 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield break;
 			}
 			StartCoroutine(UpdateVariables());
-			yield return "sendtochaterror The rules are now updated.";
+			yield return "sendtochat The rules are now updated.";
 		}
 	}
 }
