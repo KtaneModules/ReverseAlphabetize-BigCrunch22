@@ -547,6 +547,8 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield return "sendtochaterror The module is not showing a letter. The command was not processed.";
 				yield break;
 			}
+			yield return "solve";
+			yield return "strike";
 			RightQuad.OnInteract();
 		}
 		
@@ -558,6 +560,8 @@ public class ReverseAlphabetizeScript : MonoBehaviour
 				yield return "sendtochaterror The module is not showing a letter. The command was not processed.";
 				yield break;
 			}
+			yield return "solve";
+			yield return "strike";
 			LeftQuad.OnInteract();
 		}
 		
